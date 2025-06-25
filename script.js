@@ -1,5 +1,5 @@
 async function fetchServerStatus() {
-  const response = await fetch('http://onehouronelife.com/serveList/serverList.php');
+  const response = await fetch('https://corsproxy.io/?https://onehouronelife.com/serveList/serverList.php')
   const text = await response.text();
   const lines = text.trim().split('\n');
   const servers = lines.map(line => {
@@ -17,7 +17,7 @@ async function fetchServerStatus() {
 }
 
 async function fetchLeaderboard() {
-  const response = await fetch('http://onehouronelife.com/fitnessServer/server.php?action=leaderboard');
+  const response = await fetch('https://corsproxy.io/?https://onehouronelife.com/fitnessServer/server.php?action=leaderboard')
   const text = await response.text();
   const lines = text.trim().split('\n');
   const list = document.getElementById('leaderboardList');
